@@ -5,13 +5,13 @@ import {
   BrowserRouter,
 } from 'react-router-dom';
 import Home from './components/Home';
+import './App.css';
 // import { createContext, useState } from 'react';
 
 export default function App() {
   return (
     <>
       <BrowserRouter>
-  
         <Routes>
           <Route path="/" element={<Home />}></Route>
         </Routes>
@@ -19,4 +19,3 @@ export default function App() {
     </>
   );
 }
-
