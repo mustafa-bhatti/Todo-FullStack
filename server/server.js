@@ -3,6 +3,7 @@ import ConnectDB from './config/connection.js';
 import morgan from 'morgan';
 import dotenv from 'dotenv';
 import todoRouter from './routes/todo.routes.js';
+import cors from 'cors';
 dotenv.config();
 ConnectDB();
 
@@ -16,6 +17,12 @@ app.use(morgan('dev'));
 app.get('/', (req, res) => {
   res.send('Express App Started');
 });
+app.use(
+  cors({
+    origin: 'http://localhost:5173', // React dev server
+    credentials: true,
+  })
+);
 
 app.use('/api/v1/', todoRouter);
 
