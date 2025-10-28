@@ -66,7 +66,7 @@ let updateTodo = async (req, res) => {
     if (title) updatedFields.title = title;
     if (description) updatedFields.description = description;
     if (date) updatedFields.date = date;
-    if (completed) updatedFields.completed = completed;
+    if (completed != undefined) updatedFields.completed = completed;
     let updateTodo = await todoModel.findByIdAndUpdate(todoId, updatedFields, {
       new: true,
     });

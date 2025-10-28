@@ -62,7 +62,9 @@ export function TodoProvider({ children }) {
 
   const updateTodo = async (todoData) => {
     try {
-      const response = await fetch(`${API_BASE_URL}/update/todo/`, {
+      console.log(todoData);
+      console.log(JSON.stringify(todoData));
+      const response = await fetch(`${API_BASE_URL}/update/todo`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
